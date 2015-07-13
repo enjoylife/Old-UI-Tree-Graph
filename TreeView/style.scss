@@ -1,0 +1,81 @@
+$res-width: 200px;
+$res-pad: 10px;
+
+$res-icon: 12px;
+$res-icon-pad: 10px;
+
+.tree-view {
+	width: $res-width;
+	font-size:18px;
+	min-height: 0px;
+	
+	.tree-view-title {
+		margin: 10px $res-pad -20px $res-pad;
+	}
+
+	.tree-view-search {
+		margin: 5px $res-pad 20px $res-pad;
+		width: $res-width - 3 * $res-pad;
+
+		.tree-view-search-box {
+			width: $res-width - 3 * $res-pad;
+		}
+	}
+
+	.tree-view-resource-list {
+		// Account for material search box automatic padding
+		margin-top:-30px;
+	}
+
+	
+	.tree-view-resource {
+		padding-left: $res-pad;
+		padding-right: $res-pad;
+		display:block;
+		width: $res-width;
+		font-size: 1em;
+		line-height:1.4em;
+
+		clear:both;
+		
+		overflow:hidden;
+
+		:hover {
+			overflow:visible;
+			position:relative;
+		}
+	}
+
+	.tree-view-resource-title {
+		font-weight:bold;
+		width: $res-width - (2* $res-pad) - $res-icon - $res-icon-pad;
+		float: left;
+		display: inline-block;
+		overflow: hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+
+	.tree-view-resource-type-icon {
+		display: inline-block;
+		width: $res-icon;
+		height: $res-icon;
+		padding-right:$res-icon-pad;
+		padding-top:5px;
+		float:left;
+		
+		fill:#aaa;
+		
+	}
+
+	.tree-view-resource > .tree-view-resource {
+		font-size: 0.9em;
+		padding-left:(2* $res-pad);
+		
+
+		.tree-view-resource-title {
+			font-weight:normal;
+			width: $res-width - (2* $res-pad) - $res-icon - $res-icon-pad - 15px;
+		}
+	}
+}

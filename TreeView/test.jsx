@@ -22,6 +22,22 @@ let data = [
           type:'text'
         },
         {
+          title: 'first name',
+          type:'text'
+        },
+        {
+          title: 'first name',
+          type:'text'
+        },
+        {
+          title: 'first name',
+          type:'text'
+        },
+        {
+          title: 'first name',
+          type:'text'
+        },
+        {
           title:'byHour',
           type:'time'
         }

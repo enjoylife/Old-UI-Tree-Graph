@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.scss';
 
+import {ResizableBox} from 'react-resizable';
+
 import Velocity from 'Velocity';
  
 export default class TreeView extends React.Component {
@@ -110,20 +112,17 @@ export default class TreeView extends React.Component {
 	render() {
  		let tree = this.createResources(this.props.root);
 		return (
-			<div className="tree-view mdl-card mdl-shadow--2dp">
-
+	    <ResizableBox className="tree-view mdl-card mdl-shadow--2dp" width={200} height={400} minConstraints={[200,300]}>
 				<h3 className="tree-view-title">Resources</h3>
-				 
-					<div className="tree-view-search mdl-textfield mdl-js-textfield">
-						<input className="tree-view-search-box mdl-textfield__input" type="text"  />
-						<label className="mdl-textfield__label" >Search</label>
-					</div>
-
+				<div className="tree-view-search mdl-textfield mdl-js-textfield">
+					<input className="tree-view-search-box mdl-textfield__input" type="text"  />
+					<label className="mdl-textfield__label" >Search</label>
+				</div>
 				<div ref='list' className="tree-view-resource-list">
 					{tree}
 				</div>
-				
-			</div>
+			</ResizableBox>
+		
 		);
 	}
 }

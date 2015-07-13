@@ -97,4 +97,23 @@ describe('TreeView', () => {
   it('Resource list should have correct top level nodes', () => {
     expect(React.findDOMNode(component.refs.list).childElementCount).toEqual(data.length);
   });
+
+  it('Can Highlight search and scroll to resource fields', () => {
+
+  })
+
+  it('Allows for Long press on resources for info views', () =>{
+
+  })
+
+   it('Allows resources to be draggable to other compoenents', () =>{
+    
+  })
+    it('Drag and Drop for new resources', () =>{
+    
+  })
+     it('Icons per resources', () =>{
+    
+  })
+
 });

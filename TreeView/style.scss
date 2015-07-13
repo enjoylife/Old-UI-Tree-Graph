@@ -4,6 +4,8 @@ $res-pad: 10px;
 $res-icon: 12px;
 $res-icon-pad: 10px;
 
+// TODO: Convert .tree-view and tree-view-resource to use flexbox
+
 .tree-view {
 	width: $res-width;
 	font-size:18px;

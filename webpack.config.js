@@ -7,7 +7,8 @@ module.exports = {
 
   // Entry point for the bundle, path and filename to main module
   entry: {
-    treetest: './TreeView/test.jsx'
+    treetest: './TreeView/test.jsx',
+    ckangridtest: './CKANGrid/test.jsx'
   },
   devtool: 'inline-source-map',
   output: {
@@ -66,7 +67,7 @@ module.exports = {
   
 
   plugins: [
-    new webpack.optimize.DedupePlugin(),
+    
     new ExtractTextPlugin("styles.css")
   ]
 

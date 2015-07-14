@@ -91,7 +91,7 @@ describe('TreeView', () => {
 
   beforeEach(() => {  
     component = TestUtils.renderIntoDocument(<TreeView root={data} />)
-    console.log([React.findDOMNode(component.refs.list)])
+    // console.log([React.findDOMNode(component.refs.list)])
   });
  
   it('Resource list should have correct top level nodes', () => {

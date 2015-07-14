@@ -61,28 +61,45 @@ export default class TreeView extends React.Component {
 		root.open = !root.open;
 	}
 
-	createResources = (root) => {
+	parseTree(root, func){
+		var queue = [],
+        next = root;
+    while (next) {
+        if (next.children) {
+            next.children.forEach((i, child) => {
+                queue.push(child);
+            });
+        }
+    		func(next);
+        next = queue.shift();
+    }
+	}
+
+
+	createResources = (root,id) => {
 		var onClick;
 		var tree = []
 		for (var i = 0; i < root.length; i++) {
+			root[i]._key = id++;
+			root[i].open = false;	
+
 			if(root[i].children){
-				root[i].open = false;
 				var onClick = this.animateTitle.bind(null, root[i])
 			};
 			tree.push(
-				<div className="tree-view-resource">
+				<div className="tree-view-resource" key={root[i]._key}>
 					<span className="tree-view-resource-type">{this.createIcon(root[i].type)}</span>
 					<span className="tree-view-resource-title" onClick={onClick}>{root[i].title}</span>
-					{(root[i].children == undefined) ? null : this.createResources(root[i].children)}
+					{	(root[i].children == undefined) ? 
+							null : this.createResources(root[i].children,++id)
+					}
 				</div>
 				)
 		};
 		return tree;
 	}
 
-	createChildren(child, i){
-		return (<div key={i}>{child.title}</div>)
-	}
+
 
 	validateRoot = (root) => {
 			for (var i = root.length - 1; i >= 0; i--) {
@@ -102,24 +119,54 @@ export default class TreeView extends React.Component {
 			}
 	}
 
+	search = (event) => {
+			let list = React.findDOMNode(this.refs.list);
+			let elems = list.querySelectorAll('.tree-view-resource-title');
+			
+			for (var i = elems.length - 1; i >= 0; i--) {
+				if(event.target.value == "" || ~elems[i].innerText.indexOf(event.target.value) > -1){
+					elems[i].classList.remove('tree-view-resource-title__highlight');
+				}  else{
+					elems[i].classList.add('tree-view-resource-title__highlight');
+				}
+			};
+	}
+
 	componentWillMount(){
 		this.validateRoot(this.props.root);
+	}
+
+	componentDidMount() {
+		let search = React.findDOMNode(this.refs.search);
+		console.log(search);		
+		componentHandler.upgradeDom();
 	}
 
 	componentWillReceiveProps(nextProps) {
 		this.validateRoot(nextProps.root);
 	}
 	render() {
- 		let tree = this.createResources(this.props.root);
+ 		let tree = this.createResources(this.props.root,0);
 		return (
-	    <ResizableBox className="tree-view mdl-card mdl-shadow--2dp" width={200} height={400} minConstraints={[200,300]}>
+	    <ResizableBox className="mdl-card mdl-shadow--2dp" width={200} height={400} minConstraints={[200, 200]}>
+	    <div className="tree-view ">
+	    <div className="tree-view-extras">
 				<h3 className="tree-view-title">Resources</h3>
-				<div className="tree-view-search mdl-textfield mdl-js-textfield">
-					<input className="tree-view-search-box mdl-textfield__input" type="text"  />
-					<label className="mdl-textfield__label" >Search</label>
+				<div ref="search" className="tree-view-search mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+					<label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search-expandable">
+					<i className="material-icons">search</i>
+					</label>
+					<div className="mdl-textfield__expandable-holder">
+						<input onChange={this.search} className="tree-view-search-box mdl mdl-textfield__input" type="text" id="search-expandable" />
+						<label className="mdl-textfield__label" htmlFor="search-expandable">Find by name</label>
+					</div>
 				</div>
+				</div>
+			
+				
 				<div ref='list' className="tree-view-resource-list">
 					{tree}
+				</div>
 				</div>
 			</ResizableBox>
 		

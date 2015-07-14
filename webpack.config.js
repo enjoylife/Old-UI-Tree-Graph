@@ -36,13 +36,14 @@ module.exports = {
         loader: 'style-loader!css-loader'
       },
       {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract(
-                    // activate source maps via loader query
-                    'css?sourceMap!' +
-                    'sass?sourceMap'
-                )
-            }
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(
+            // activate source maps via loader query
+            'css?sourceMap!' + 
+            'autoprefixer-loader?browsers=last 2 version!' +
+            'sass?sourceMap'
+        )
+      }
       
     ] // end loaders
   },

@@ -43,18 +43,18 @@ export default class TreeView extends React.Component {
 			// React doesnt support use tag yet.
 			// http://stackoverflow.com/questions/26815738/svg-use-tag-and-reactjs
 			var useTag = '<use xlink:href="icons/symbols.svg#datatype-' + typeStr +'"  />';
-    	return <svg className="tree-view-resource-type-icon" dangerouslySetInnerHTML={{__html: useTag }} />;
+    	return <svg className="treev-res-type-icon" dangerouslySetInnerHTML={{__html: useTag }} />;
 	}
 
 	animateTitle(root, event){
 		// Get all sub resources
-		let nodes = event.target.parentNode.querySelectorAll('.tree-view-resource');
+		let nodes = event.target.parentNode.querySelectorAll('.treev-res');
 		
 		for (var i = 0; i < nodes.length; i++) {
 			if(root.open){
 				Velocity(nodes[i],'reverse');
 			} else {
-				Velocity(nodes[i], {height:0, opacity:0},{duration:500, easing:'easeInQuad'})	
+				Velocity(nodes[i], {height:0, opacity:0, margin:0},{duration:1000,  easing: [900, 40]})	
 			}
 			
 		};
@@ -87,9 +87,9 @@ export default class TreeView extends React.Component {
 				var onClick = this.animateTitle.bind(null, root[i])
 			};
 			tree.push(
-				<div className="tree-view-resource" key={root[i]._key}>
-					<span className="tree-view-resource-type">{this.createIcon(root[i].type)}</span>
-					<span className="tree-view-resource-title" onClick={onClick}>{root[i].title}</span>
+				<div className="treev-res" key={root[i]._key}>
+					<span className="treev-res-type">{this.createIcon(root[i].type)}</span>
+					<span className="treev-res-title" onClick={onClick}>{root[i].title}</span>
 					{	(root[i].children == undefined) ? 
 							null : this.createResources(root[i].children,++id)
 					}
@@ -121,13 +121,13 @@ export default class TreeView extends React.Component {
 
 	search = (event) => {
 			let list = React.findDOMNode(this.refs.list);
-			let elems = list.querySelectorAll('.tree-view-resource-title');
+			let elems = list.querySelectorAll('.treev-res-title');
 			
 			for (var i = elems.length - 1; i >= 0; i--) {
 				if(event.target.value == "" || ~elems[i].innerText.indexOf(event.target.value) > -1){
-					elems[i].classList.remove('tree-view-resource-title__highlight');
+					elems[i].classList.remove('treev-res-title__highlight');
 				}  else{
-					elems[i].classList.add('tree-view-resource-title__highlight');
+					elems[i].classList.add('treev-res-title__highlight');
 				}
 			};
 	}
@@ -149,22 +149,22 @@ export default class TreeView extends React.Component {
  		let tree = this.createResources(this.props.root,0);
 		return (
 	    <ResizableBox className="mdl-card mdl-shadow--2dp" width={200} height={400} minConstraints={[200, 200]}>
-	    <div className="tree-view ">
-	    <div className="tree-view-extras">
-				<h3 className="tree-view-title">Resources</h3>
-				<div ref="search" className="tree-view-search mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+	    <div className="treev ">
+	    <div className="treev-extras">
+				<h3 className="treev-title">Resources</h3>
+				<div ref="search" className="treev-search mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
 					<label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search-expandable">
 					<i className="material-icons">search</i>
 					</label>
 					<div className="mdl-textfield__expandable-holder">
-						<input onChange={this.search} className="tree-view-search-box mdl mdl-textfield__input" type="text" id="search-expandable" />
+						<input onChange={this.search} className="treev-search-box mdl mdl-textfield__input" type="text" id="search-expandable" />
 						<label className="mdl-textfield__label" htmlFor="search-expandable">Find by name</label>
 					</div>
 				</div>
 				</div>
 			
 				
-				<div ref='list' className="tree-view-resource-list">
+				<div ref='list' className="treev-res-list">
 					{tree}
 				</div>
 				</div>

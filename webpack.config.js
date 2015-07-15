@@ -1,5 +1,5 @@
 'use strict';
-
+var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -7,13 +7,14 @@ module.exports = {
 
   // Entry point for the bundle, path and filename to main module
   entry: {
+    vendor: ["react"],
     treetest: './TreeView/test.jsx',
     ckangridtest: './CKANGrid/test.jsx'
   },
   devtool: 'inline-source-map',
   output: {
     // Output directory as an absolute path
-    path: './',
+     path: path.join(__dirname, './build'),
     // Filename as relative path within output path
     filename: '[name].js',
     // Output path from the view of the JS/HTML
@@ -67,7 +68,7 @@ module.exports = {
   
 
   plugins: [
-    
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
     new ExtractTextPlugin("styles.css")
   ]
 

@@ -5,7 +5,8 @@
   "description": "Unit testing a React component using Jasmine and Webpack",
   "author": "Matthew Clemens <matt@symsoftsolutions.com>",
   "scripts": {
-    "test": "webpack-dev-server"
+    "test": "webpack-dev-server",
+    "start": "node_modules/.bin/webpack --watch"
   },
   "dependencies": {
     "react": "^0.13.1"

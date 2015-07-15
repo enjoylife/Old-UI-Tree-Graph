@@ -8,7 +8,8 @@ module.exports = {
   // Entry point for the bundle, path and filename to main module
   entry: {
     treetest: './TreeView/test.jsx',
-    ckangridtest: './CKANGrid/test.jsx'
+    ckangridtest: './CKANGrid/test.jsx',
+    chartselecttest: './ChartSelect/test.jsx'
   },
   devtool: 'inline-source-map',
   output: {
@@ -51,7 +52,9 @@ module.exports = {
 
   externals: {
     jasmine :'jasmine',
-    Velocity: 'Velocity'
+    Velocity: 'Velocity',
+    jquery: '$',
+    spectrum: 'spectrum'
   },
 
   devServer: {

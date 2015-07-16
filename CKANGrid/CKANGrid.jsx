@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './grid.scss';
+import './_ckangrid.scss';
 
 export default class CKANGrid extends React.Component {
 	createItem(item,i){

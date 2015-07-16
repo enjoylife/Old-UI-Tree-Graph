@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './_chartselect.scss';
 import slick from 'slick-carousel';
 
 

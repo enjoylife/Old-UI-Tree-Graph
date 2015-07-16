@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.scss';
 
+import './_treeview.scss';
 import {ResizableBox} from 'react-resizable';
 
 import Velocity from 'Velocity';

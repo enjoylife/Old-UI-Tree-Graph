@@ -19,16 +19,28 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <style>
+html {
+	background: linear-gradient(rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0));
+	background-color: #E8EBEF;
+	height: 100%;
+}
 	.mdl-textfield__error.field-validation-error{
 		visibility: visible;
 	}
 	.mdl-button {
 		display: block;
-		margin: 20px
+		width:70%;
+		margin:20px auto;
 	}
 	.mdl-grid {
 		flex-wrap:wrap;
 		max-width: 430px;
+	}
+	h1 {
+		text-align: center;
+	}
+	.form-header{
+		text-align: center;
 	}
 	h3 {
 		 text-align: center;
@@ -36,10 +48,15 @@
 		  line-height: 50px;
 		  padding-left: 20px;
 		  margin-top: 0px;
+		  margin-bottom:5px;
 	}
 	.mdl-textfield {
 		margin-left: 20px;
-		margin-righ:20px;
+		margin-right:20px;
+	}
+
+	.mdl-textfield__label {
+		color:rgba(0,0,0,0.5);
 	}
 
 	h4{
@@ -58,18 +75,26 @@
 		padding-right: 20px;
 
 	}
+	
 </style>
 
 </head>
 <body>
+	<h1>Data Viz</h1>
 	<div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--8-col mdl-shadow--2dp">
-	<h3>Create A User Profile</h3>
+	<div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+	<div class="form-header">
+		<h3>Create your account</h3>
+		<span>…or save your account later, and <a class="mdl-accent" href="#">skip this step</a></span>
+				<hr/>
+
+	</div>
 		<form action="#">
 			
 			<div class="label-wrap">
-				<h6>Name</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<!-- <h6>Name</h6> -->
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+					
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
@@ -85,123 +110,121 @@
 				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
 			</div>
-			<div class="label-wrap">
-				<h6>Email</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<div class="label-wrap">
+				
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+					
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
-				    	data-val-required="" 
-				    	id="inputEmail"  
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
 				    	maxlength="30" 
-				    	name="inputfield"  
+				    	name="firstname"  
 				    	type="text" 
 				    	value="" />
 				    <label class="mdl-textfield__label" 
-				    	for="inputEmail">Email</label>
+				    	for="inputName">Email</label>
 				    <span class="mdl-textfield__error field-validation-valid" 
-				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
 			</div>
-			<div class="label-wrap">
-				<h6>Title</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<div class="label-wrap">
+				
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+					
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
-				    	data-val-required="" 
-				    	id="inputId"  
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
 				    	maxlength="30" 
-				    	name="inputfield"  
+				    	name="firstname"  
 				    	type="text" 
 				    	value="" />
 				    <label class="mdl-textfield__label" 
-				    	for="inputId">Title</label>
+				    	for="inputName">Username</label>
 				    <span class="mdl-textfield__error field-validation-valid" 
-				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
 			</div>
-			<div class="label-wrap">
-				<h6>Title</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<div class="label-wrap">
+				
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+					
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
-				    	data-val-required="" 
-				    	id="inputId"  
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
 				    	maxlength="30" 
-				    	name="inputfield"  
+				    	name="firstname"  
 				    	type="text" 
 				    	value="" />
 				    <label class="mdl-textfield__label" 
-				    	for="inputId">Title</label>
+				    	for="inputName">Password</label>
 				    <span class="mdl-textfield__error field-validation-valid" 
-				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
 			</div>
-			<div class="label-wrap">
-				<h6>Title</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<div class="label-wrap">
+				
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+					
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
-				    	data-val-required="" 
-				    	id="inputId"  
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
 				    	maxlength="30" 
-				    	name="inputfield"  
+				    	name="firstname"  
 				    	type="text" 
 				    	value="" />
 				    <label class="mdl-textfield__label" 
-				    	for="inputId">Title</label>
+				    	for="inputName">Confirm Password</label>
 				    <span class="mdl-textfield__error field-validation-valid" 
-				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
 			</div>
-			<div class="label-wrap">
-				<h6>Title</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<div class="label-wrap">
+					<h6> (Optional)</h6>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
-				    	data-val-required="" 
-				    	id="inputId"  
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
 				    	maxlength="30" 
-				    	name="inputfield"  
+				    	name="firstname"  
 				    	type="text" 
 				    	value="" />
 				    <label class="mdl-textfield__label" 
-				    	for="inputId">Title</label>
+				    	for="inputName">CKAN User ID</label>
 				    <span class="mdl-textfield__error field-validation-valid" 
-				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
 			</div>
-			<div class="label-wrap">
-				<h6>Title</h6>
-				<div class="mdl-textfield mdl-js-textfield ">
+				<div class="label-wrap optional">
+				<h6>(Optional)</h6>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+					
 				    <input class="mdl-textfield__input" 
 				    	type="text"  
 				    	data-val="true" 
-				    	data-val-required="" 
-				    	id="inputId"  
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
 				    	maxlength="30" 
-				    	name="inputfield"  
+				    	name="firstname"  
 				    	type="text" 
 				    	value="" />
 				    <label class="mdl-textfield__label" 
-				    	for="inputId">Title</label>
+				    	for="inputName">CKAN API Key </label>
 				    <span class="mdl-textfield__error field-validation-valid" 
-				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
 				  </div>
-			</div>						
-			<div class="label-wrap">
-			<h6></h6>
-				<div class="mdl-textfield mdl-js-textfield">
-					<input class="mdl-textfield__input" data-val="true" data-val-required="The Last Name field is required." id="" maxlength="30" name="lastname"  type="text" value="" />
-									 <label for="" class="mdl-textfield__label">Last Name</label>
-					<span class="mdl-textfield__error field-validation-valid" data-valmsg-for="" data-valmsg-replace="true" ></span>
-				</div>
 			</div>
 
+			
 			  <!-- Raised button with ripple -->
 			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 			  Sign Up

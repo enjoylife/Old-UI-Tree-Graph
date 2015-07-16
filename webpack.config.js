@@ -46,6 +46,10 @@ module.exports = {
             'autoprefixer-loader?browsers=last 2 version!' +
             'sass?sourceMap'
         )
+      },
+      {
+        test:/\.svg$/,
+        loader:'url-loader'
       }
       
     ] // end loaders

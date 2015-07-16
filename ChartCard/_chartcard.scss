@@ -1,0 +1,16 @@
+.cht-card {
+    width: 320px;
+    height: 320px;
+  }
+  .cht-card > .mdl-card__title {
+    color: #fff;
+    text-transform: capitalize;
+    background: url('./icons/charts.svg') 50% no-repeat #999;
+      background-position:center;
+  }
+
+  .cht-card-info {
+  	-webkit-justify-content: space-between;
+  	    -ms-flex-pack: justify;
+  	        justify-content: space-between;
+  }

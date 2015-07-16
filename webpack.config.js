@@ -8,9 +8,12 @@ module.exports = {
   // Entry point for the bundle, path and filename to main module
   entry: {
     vendor: ["react"],
-    treetest: './TreeView/test.jsx',
-    ckangridtest: './CKANGrid/test.jsx',
-    chartselecttest: './ChartSelect/test.jsx'
+     tests: './Tests/test.jsx',
+    chartcard: './ChartCard/test.jsx',
+    ckangrid: './CKANGrid/test.jsx',
+    chartselect: './ChartSelect/test.jsx',
+    treeview: './TreeView/test.jsx'
+     
   },
   devtool: 'inline-source-map',
   output: {
@@ -76,7 +79,7 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("[name].css")
   ]
 
 };

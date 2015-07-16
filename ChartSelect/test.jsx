@@ -19,10 +19,11 @@ function Example(){
   let gridAnchor = document.createElement('div');
   gridAnchor.style.padding = '100px';
   gridAnchor.style.width = '80%';
-  gridAnchor.className = "mdl-grid"
-  let gridChild = document.createElement('div');
-  gridChild.className = " mdl-cell mdl-cell--4-col"
-  gridChild = gridAnchor.appendChild(gridChild)
+  
   window.document.body.appendChild(gridAnchor); 
-  React.render(<ChartSelect items={data} />, gridChild)   
+  React.render(
+
+    <div className="mdl-cell mdl-cell--4-col">
+      <ChartSelect items={data} />
+    </div>, gridAnchor)   
 }

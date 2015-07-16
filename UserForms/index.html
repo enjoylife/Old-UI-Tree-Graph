@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User Forms</title>
+
+	<!-- Animations -->
+<script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+<!-- Testing ONly -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.js"></script>
+
+<!-- UI Flourish -->
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<style>
+	.mdl-textfield__error.field-validation-error{
+		visibility: visible;
+	}
+	.mdl-button {
+		display: block;
+		margin: 20px
+	}
+	.mdl-grid {
+		flex-wrap:wrap;
+		max-width: 430px;
+	}
+	h3 {
+		 text-align: center;
+		  height: 50px;
+		  line-height: 50px;
+		  padding-left: 20px;
+		  margin-top: 0px;
+	}
+	.mdl-textfield {
+		margin-left: 20px;
+		margin-righ:20px;
+	}
+
+	h4{
+		padding-right: 20px;
+		margin-bottom: 0px;
+		text-align: right;
+	}
+	h6 {
+		text-align: center;
+		display: inline;
+	}
+	.label-wrap {
+		display: flex;
+		align-items:center;
+		padding-left: 20px;
+		padding-right: 20px;
+
+	}
+</style>
+
+</head>
+<body>
+	<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--8-col mdl-shadow--2dp">
+	<h3>Create A User Profile</h3>
+		<form action="#">
+			
+			<div class="label-wrap">
+				<h6>Name</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="The First Name field is required." 
+				    	id="inputName"  
+				    	maxlength="30" 
+				    	name="firstname"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputName">Name</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="firstname"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>
+			<div class="label-wrap">
+				<h6>Email</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="" 
+				    	id="inputEmail"  
+				    	maxlength="30" 
+				    	name="inputfield"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputEmail">Email</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>
+			<div class="label-wrap">
+				<h6>Title</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="" 
+				    	id="inputId"  
+				    	maxlength="30" 
+				    	name="inputfield"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputId">Title</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>
+			<div class="label-wrap">
+				<h6>Title</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="" 
+				    	id="inputId"  
+				    	maxlength="30" 
+				    	name="inputfield"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputId">Title</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>
+			<div class="label-wrap">
+				<h6>Title</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="" 
+				    	id="inputId"  
+				    	maxlength="30" 
+				    	name="inputfield"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputId">Title</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>
+			<div class="label-wrap">
+				<h6>Title</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="" 
+				    	id="inputId"  
+				    	maxlength="30" 
+				    	name="inputfield"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputId">Title</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>
+			<div class="label-wrap">
+				<h6>Title</h6>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" 
+				    	type="text"  
+				    	data-val="true" 
+				    	data-val-required="" 
+				    	id="inputId"  
+				    	maxlength="30" 
+				    	name="inputfield"  
+				    	type="text" 
+				    	value="" />
+				    <label class="mdl-textfield__label" 
+				    	for="inputId">Title</label>
+				    <span class="mdl-textfield__error field-validation-valid" 
+				    	data-valmsg-for="inputfield"  data-valmsg-replace="true"></span>
+				  </div>
+			</div>						
+			<div class="label-wrap">
+			<h6></h6>
+				<div class="mdl-textfield mdl-js-textfield">
+					<input class="mdl-textfield__input" data-val="true" data-val-required="The Last Name field is required." id="" maxlength="30" name="lastname"  type="text" value="" />
+									 <label for="" class="mdl-textfield__label">Last Name</label>
+					<span class="mdl-textfield__error field-validation-valid" data-valmsg-for="" data-valmsg-replace="true" ></span>
+				</div>
+			</div>
+
+			  <!-- Raised button with ripple -->
+			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+			  Sign Up
+			</button>
+		</form>
+	</div>
+	</div>	
+	<div class="container">
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default no-border">
+            <div class="panel-heading panel-title no-border">
+                Create a User Profile
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        
+                        <form class="form-horizontal" method="POST" action="/User/CreateUser">
+                            
+                            <div class="form-group">
+                                <label for="inputFirstname" class="col-sm-3 control-label">First Name</label>
+                                <div class="col-sm-3">
+                                    <input class="form-control" data-val="true" data-val-required="The First Name field is required." id="inputFirstname" maxlength="30" name="firstname" placeholder="First Name" type="text" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="firstname" data-valmsg-replace="true" style="color: #ff0000"></span>
+                                    <!-- <input type="text" class="form-control" id="inputFirstname" name="firstname" placeholder="First Name" /> -->
+                                </div>
+                                <label for="inputLastname" class="col-sm-3 control-label">Last Name</label>
+                                <div class="col-sm-3">
+                                    
+                                    <input class="form-control" data-val="true" data-val-required="The Last Name field is required." id="inputLastname" maxlength="30" name="lastname" placeholder="Last Name" type="text" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="lastname" data-valmsg-replace="true" style="color: #ff0000"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" data-val="true" data-val-email="Invalid Email Address" data-val-length="Email may not be longer than 100 characters" data-val-length-max="100" data-val-required="The Email field is required." id="inputEmail" maxlength="100" name="email" placeholder="Email Address" type="email" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true" style="color: #ff0000"></span>
+                                    
+                                </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <label for="inputUsername" class="col-sm-3 control-label">Username</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" data-val="true" data-val-required="The Username field is required." id="inputUsername" maxlength="30" name="username" placeholder="Username" type="text" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="username" data-valmsg-replace="true" style="color: #ff0000"></span>
+                                    
+                                </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" data-val="true" data-val-length="Password must be between 6 and 50 characters" data-val-length-max="50" data-val-length-min="6" data-val-required="The password field is required." id="inputPassword" maxlength="30" name="password" placeholder="Password" type="password" />
+                                    <span class="field-validation-valid" data-valmsg-for="password" data-valmsg-replace="true" style="color: #ff0000"></span>
+                                    
+                                </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" data-val="true" data-val-equalto="&#39;Confirm Password&#39; and &#39;password&#39; do not match." data-val-equalto-other="*.password" data-val-required="The Confirm Password field is required." id="inputConfirmPassword" maxlength="30" name="confirmPassword" placeholder="Confirm Password" type="password" />
+                                    <span class="field-validation-valid" data-valmsg-for="confirmPassword" data-valmsg-replace="true" style="color: #ff0000"></span>
+                                    
+                                </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <label for="inputCKANUserName" class="col-sm-3 control-label">CKAN User ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputCKANUserName" name="ckanUserId" placeholder="CKAN UserName" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inputAPIKey" class="col-sm-3 control-label">CKAN API Key</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputAPIKey" name="apiKey" placeholder="CKAN API Key" />
+                                </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9 text-right">
+                                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                                </div>
+                            </div>
+ 
+                        </form>
+ 
+ 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

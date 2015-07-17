@@ -2,6 +2,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
 
@@ -65,12 +66,7 @@ module.exports = {
     spectrum: 'spectrum'
   },
 
-  devServer: {
-    noInfo: false, // Display no info to console (only warnings and errors)
-    quiet: false, // Display nothing to the console
-    lazy: false, // No watching, but recompilation on every request
   
-  },
 
   stats: {
     cached: false
@@ -78,6 +74,8 @@ module.exports = {
   
 
   plugins: [
+    new WebpackNotifierPlugin(),
+    new webpack.NoErrorsPlugin(),
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
     new ExtractTextPlugin("[name].css")
   ]
